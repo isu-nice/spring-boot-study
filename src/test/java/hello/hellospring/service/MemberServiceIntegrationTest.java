@@ -5,13 +5,18 @@ import hello.hellospring.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/*
+ * spring 컨테이너와 DB를 연결한 통합 테스트
+ * MemberServiceTest 와 기능은 동일함
+ */
 @SpringBootTest
-// @Transactional
+@Transactional
 class MemberServiceIntegrationTest {
     @Autowired
     MemberService memberService;
